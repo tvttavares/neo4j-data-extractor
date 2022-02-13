@@ -1,0 +1,7 @@
+# neo4j
+spring:
+  data:
+    neo4j:
+      uri: neo4j+s://demo.neo4jlabs.com
+      username: username
+      password: pass
