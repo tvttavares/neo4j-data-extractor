@@ -21,7 +21,21 @@ public class User {
 
     private String idToken;
 
+    private int expiryDate;
+
+    @Properties
+    private Map<String, String> vehicleMap;
+
     @Properties
     private Map<String, String> cardMap;
+
+    private String previousPrimaryCardId;
+
+    private String status;
+
+    private Integer reefCloudId;
+
+    @Builder.Default
+    private String lastAddedCCStatus = "";
 
 }

@@ -14,7 +14,8 @@ import org.springframework.web.bind.annotation.RestController;
 import javax.servlet.http.HttpServletResponse;
 import java.util.List;
 
-import static com.tvttavares.neo4jdataextractor.config.SwaggerLinks.*;
+import static com.tvttavares.neo4jdataextractor.config.SwaggerLinks.ALL_USERS;
+import static com.tvttavares.neo4jdataextractor.config.SwaggerLinks.USER;
 
 @RestController
 @RequestMapping("/v1")
@@ -36,13 +37,4 @@ public class UserController {
         return ResponseEntity.status(HttpStatus.OK).body(userList);
     }
 
-    @GetMapping(path = "/users/csv")
-    @ApiOperation(value = USER_PAYMENT_CSV)
-    public ResponseEntity<Object> getUserPaymentIdCSV(HttpServletResponse response) {
-        log.info("Starting request for all users in CSV format");
-        userService.findAllUsersAndPaymentIDs(response);
-
-        return ResponseEntity.status(response.getContentType() == null ? HttpStatus.NOT_FOUND : HttpStatus.OK)
-                .body(null);
-    }
 }

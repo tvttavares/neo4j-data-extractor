@@ -8,6 +8,6 @@ import java.util.List;
 
 public interface UserRepository extends Repository<User, String> {
 
-    @Query("MATCH (n:User) RETURN n LIMIT 2")
+    @Query("MATCH (n:User) RETURN n ")
     List<User> getAllUsers();
 }
